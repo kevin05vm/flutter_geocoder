@@ -109,7 +109,7 @@ public class GeocoderPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    result = new MethodResultWrapper(rawResult);
+    result = new MethodResultWrapper(result);
     if (call.method.equals("findAddressesFromQuery")) {
       String address = (String) call.argument("address");
       findAddressesFromQuery(address, result);
